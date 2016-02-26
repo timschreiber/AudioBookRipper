@@ -11,6 +11,8 @@ using System.Threading.Tasks;
 using WaveLib;
 using Yeti.MMedia;
 
+// References:  http://www.codeproject.com/Articles/5458/C-Sharp-Ripper
+//              http://stackoverflow.com/questions/19166140/how-do-can-i-use-lame-to-encode-an-wav-to-an-mp3-c-sharp
 
 namespace AudioBookRipper.ConsoleApp
 {

@@ -36,11 +36,12 @@
             this.dbDestination = new System.Windows.Forms.GroupBox();
             this.txtSaveToFolder = new System.Windows.Forms.TextBox();
             this.lblSaveToFolder = new System.Windows.Forms.Label();
-            this.btnBrowse = new System.Windows.Forms.Button();
             this.gbEncoding = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbQuality = new System.Windows.Forms.ComboBox();
             this.lblQuality = new System.Windows.Forms.Label();
             this.btnBegin = new System.Windows.Forms.Button();
+            this.btnBrowse = new System.Windows.Forms.Button();
+            this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.gbBook.SuspendLayout();
             this.dbDestination.SuspendLayout();
             this.gbEncoding.SuspendLayout();
@@ -54,14 +55,14 @@
             this.gbBook.Controls.Add(this.lblAuthor);
             this.gbBook.Location = new System.Drawing.Point(12, 12);
             this.gbBook.Name = "gbBook";
-            this.gbBook.Size = new System.Drawing.Size(278, 137);
+            this.gbBook.Size = new System.Drawing.Size(278, 117);
             this.gbBook.TabIndex = 4;
             this.gbBook.TabStop = false;
             this.gbBook.Text = "Book";
             // 
             // txtTitle
             // 
-            this.txtTitle.Location = new System.Drawing.Point(6, 99);
+            this.txtTitle.Location = new System.Drawing.Point(6, 83);
             this.txtTitle.Name = "txtTitle";
             this.txtTitle.Size = new System.Drawing.Size(265, 22);
             this.txtTitle.TabIndex = 7;
@@ -69,7 +70,7 @@
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
-            this.lblTitle.Location = new System.Drawing.Point(6, 79);
+            this.lblTitle.Location = new System.Drawing.Point(3, 63);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(35, 17);
             this.lblTitle.TabIndex = 6;
@@ -77,7 +78,7 @@
             // 
             // txtAuthor
             // 
-            this.txtAuthor.Location = new System.Drawing.Point(6, 49);
+            this.txtAuthor.Location = new System.Drawing.Point(6, 38);
             this.txtAuthor.Name = "txtAuthor";
             this.txtAuthor.Size = new System.Drawing.Size(265, 22);
             this.txtAuthor.TabIndex = 5;
@@ -85,7 +86,7 @@
             // lblAuthor
             // 
             this.lblAuthor.AutoSize = true;
-            this.lblAuthor.Location = new System.Drawing.Point(6, 29);
+            this.lblAuthor.Location = new System.Drawing.Point(3, 18);
             this.lblAuthor.Name = "lblAuthor";
             this.lblAuthor.Size = new System.Drawing.Size(50, 17);
             this.lblAuthor.TabIndex = 4;
@@ -96,9 +97,9 @@
             this.dbDestination.Controls.Add(this.btnBrowse);
             this.dbDestination.Controls.Add(this.lblSaveToFolder);
             this.dbDestination.Controls.Add(this.txtSaveToFolder);
-            this.dbDestination.Location = new System.Drawing.Point(12, 156);
+            this.dbDestination.Location = new System.Drawing.Point(12, 135);
             this.dbDestination.Name = "dbDestination";
-            this.dbDestination.Size = new System.Drawing.Size(278, 87);
+            this.dbDestination.Size = new System.Drawing.Size(278, 108);
             this.dbDestination.TabIndex = 5;
             this.dbDestination.TabStop = false;
             this.dbDestination.Text = "Destination";
@@ -107,7 +108,8 @@
             // 
             this.txtSaveToFolder.Location = new System.Drawing.Point(6, 50);
             this.txtSaveToFolder.Name = "txtSaveToFolder";
-            this.txtSaveToFolder.Size = new System.Drawing.Size(196, 22);
+            this.txtSaveToFolder.ReadOnly = true;
+            this.txtSaveToFolder.Size = new System.Drawing.Size(265, 22);
             this.txtSaveToFolder.TabIndex = 0;
             // 
             // lblSaveToFolder
@@ -119,39 +121,30 @@
             this.lblSaveToFolder.TabIndex = 1;
             this.lblSaveToFolder.Text = "Save to Folder";
             // 
-            // btnBrowse
-            // 
-            this.btnBrowse.Location = new System.Drawing.Point(208, 50);
-            this.btnBrowse.Name = "btnBrowse";
-            this.btnBrowse.Size = new System.Drawing.Size(63, 22);
-            this.btnBrowse.TabIndex = 2;
-            this.btnBrowse.Text = "Browse";
-            this.btnBrowse.UseVisualStyleBackColor = true;
-            // 
             // gbEncoding
             // 
             this.gbEncoding.Controls.Add(this.lblQuality);
-            this.gbEncoding.Controls.Add(this.comboBox1);
-            this.gbEncoding.Location = new System.Drawing.Point(12, 250);
+            this.gbEncoding.Controls.Add(this.cbQuality);
+            this.gbEncoding.Location = new System.Drawing.Point(12, 249);
             this.gbEncoding.Name = "gbEncoding";
-            this.gbEncoding.Size = new System.Drawing.Size(278, 85);
+            this.gbEncoding.Size = new System.Drawing.Size(278, 71);
             this.gbEncoding.TabIndex = 6;
             this.gbEncoding.TabStop = false;
             this.gbEncoding.Text = "Encoding Options";
             // 
-            // comboBox1
+            // cbQuality
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(6, 47);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(265, 24);
-            this.comboBox1.TabIndex = 0;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.cbQuality.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbQuality.FormattingEnabled = true;
+            this.cbQuality.Location = new System.Drawing.Point(6, 38);
+            this.cbQuality.Name = "cbQuality";
+            this.cbQuality.Size = new System.Drawing.Size(265, 24);
+            this.cbQuality.TabIndex = 0;
             // 
             // lblQuality
             // 
             this.lblQuality.AutoSize = true;
-            this.lblQuality.Location = new System.Drawing.Point(6, 27);
+            this.lblQuality.Location = new System.Drawing.Point(3, 18);
             this.lblQuality.Name = "lblQuality";
             this.lblQuality.Size = new System.Drawing.Size(52, 17);
             this.lblQuality.TabIndex = 1;
@@ -160,26 +153,40 @@
             // btnBegin
             // 
             this.btnBegin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.btnBegin.Location = new System.Drawing.Point(12, 342);
+            this.btnBegin.Location = new System.Drawing.Point(12, 326);
             this.btnBegin.Name = "btnBegin";
             this.btnBegin.Size = new System.Drawing.Size(278, 49);
             this.btnBegin.TabIndex = 7;
             this.btnBegin.Text = "Begin Ripping";
             this.btnBegin.UseVisualStyleBackColor = true;
             // 
+            // btnBrowse
+            // 
+            this.btnBrowse.Location = new System.Drawing.Point(6, 78);
+            this.btnBrowse.Name = "btnBrowse";
+            this.btnBrowse.Size = new System.Drawing.Size(75, 23);
+            this.btnBrowse.TabIndex = 2;
+            this.btnBrowse.Text = "Browse";
+            this.btnBrowse.UseVisualStyleBackColor = true;
+            this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);
+            // 
+            // folderBrowserDialog1
+            // 
+            this.folderBrowserDialog1.Description = "Select the folder where you want to save the ripped audio files:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CausesValidation = false;
-            this.ClientSize = new System.Drawing.Size(302, 403);
+            this.ClientSize = new System.Drawing.Size(302, 383);
             this.Controls.Add(this.btnBegin);
             this.Controls.Add(this.gbEncoding);
             this.Controls.Add(this.dbDestination);
             this.Controls.Add(this.gbBook);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(320, 480);
-            this.MinimumSize = new System.Drawing.Size(320, 400);
+            this.MaximumSize = new System.Drawing.Size(320, 430);
+            this.MinimumSize = new System.Drawing.Size(320, 430);
             this.Name = "Form1";
             this.ShowIcon = false;
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
@@ -202,13 +209,14 @@
         private System.Windows.Forms.TextBox txtAuthor;
         private System.Windows.Forms.Label lblAuthor;
         private System.Windows.Forms.GroupBox dbDestination;
-        private System.Windows.Forms.Button btnBrowse;
         private System.Windows.Forms.Label lblSaveToFolder;
         private System.Windows.Forms.TextBox txtSaveToFolder;
         private System.Windows.Forms.GroupBox gbEncoding;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbQuality;
         private System.Windows.Forms.Label lblQuality;
         private System.Windows.Forms.Button btnBegin;
+        private System.Windows.Forms.Button btnBrowse;
+        private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
     }
 }
 

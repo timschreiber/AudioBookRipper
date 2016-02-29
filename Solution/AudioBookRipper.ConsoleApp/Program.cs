@@ -44,7 +44,7 @@ namespace AudioBookRipper.ConsoleApp
             }
         }
 
-        static void HandleProgress(object sender, EventArgs e)
+        static void HandleProgress(object sender, ReadProgressEventArgs e)
         {
         }
 
